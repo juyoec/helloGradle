@@ -1,0 +1,7 @@
+Both Groovy and Java SE 7 provide improvements for file management in Java as I discussed in posts here, here, here, and here. However, when a particular Java application is not able to yet use Java SE 7 or Groovy for its file management, an improved file management experience can still be obtained by using Guava's Files class.
+
+File handling has always seemed a little more difficult in Java than in many other programming languages. Java SE 7 certainly improves Java's file handling capabilities dramatically with NIO.2, but not every project can make use of Java SE 7. For those projects not able to use Java SE 7, Guava's Files class is a nice intermediate solution for easier file handling. It is important to note here that Java SE 7 introduces a Files class of its own, so any use of Guava's Files class in Java SE 7 must be fully scoped if the Java version of Files is used in the same code. My examples have been written and built in Java SE 7, but I avoid using Java SE 7's Files class and so don't need to fully scope Guava's same-named class.
+
+File Creation
+
+Guava's Files class includes a couple overloaded write methods for easily writing content to a file. The next code sample demonstrates using Files.write(byte[],File).
